@@ -23,8 +23,8 @@ function AddPost() {
   }
 
   return (
-    <div>
-        <h2>Add new post</h2>
+    <div className='mt-4 p-4'>
+        <h2 className='text-3xl font-semibold mb-3 '>Add new post</h2>
         <PostForm onSubmit= {handleAddPost} intialValue={{}} />
     </div>
   )

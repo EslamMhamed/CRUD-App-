@@ -14,10 +14,10 @@ function App() {
   ])
 
   return (
-    <>
-      <h1>Awesome blog</h1>
+    <div className="max-w-7xl mx-auto mt-3 p-5">
+      <h1 className="text-4xl text-center text-gray-700 ">Awesome blog</h1>
       <RouterProvider router={router} />
-    </>
+    </div>
   )
 }
 

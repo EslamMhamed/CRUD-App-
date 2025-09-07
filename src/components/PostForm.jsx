@@ -16,9 +16,11 @@ function PostForm({onSubmit, intialValue}) {
 }
 
     const renderFiled = (label)=>(
-        <div>
-            <label htmlFor={label} >{label}</label>
-            <input id={label} type="text" name={label.toLowerCase()} value={post[label.toLowerCase()] } onChange={handleChangeInput} />
+        <div className="flex rounded-md  bg-gray-100 my-3 ">
+            <label className="text-xl p-3 " htmlFor={label} >{label}</label>
+            <input className="w-full outline-gray-500 bg-gray-100 p-3" id={label} type="text" name={label.toLowerCase()} value={post[label.toLowerCase()] }
+            placeholder={`Add Your ${label}...`}
+            onChange={handleChangeInput} />
         </div>
     )
 
@@ -35,7 +37,7 @@ function PostForm({onSubmit, intialValue}) {
     <form onSubmit={handleSubmit} >
         {renderFiled("title")}
         {renderFiled("body")}
-        <button>Submit</button>
+        <button className="px-4 py-2 mt-3 w-full text-3xl bg-gray-300 hover:bg-gray-500  rounded-md ">Submit</button>
     </form>
 )
 }
