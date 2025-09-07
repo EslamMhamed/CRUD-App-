@@ -25,7 +25,35 @@ export async function createPost(newPost) {
   });
 
   if (!response.ok) {
-    throw new Error(`Post not found (status: ${response.status})`);
+    throw new Error(`Failed to new post (status: ${response.status})`);
+  }
+
+  return response.json();
+}
+
+export async function updatePost(updatedPost) {
+  const response = await fetch(`http://localhost:3000/posts/${updatedPost.id}`,  {
+    method: "PUT",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(updatedPost)
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to update post (status: ${response.status})`);
+  }
+
+  return response.json();
+}
+
+export async function deletePost(id) {
+  const response = await fetch(`http://localhost:3000/posts/${id}`,  {
+    method: "DELETE",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to delete post (status: ${response.status})`);
   }
 
   return response.json();

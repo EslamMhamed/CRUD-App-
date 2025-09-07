@@ -1,7 +1,7 @@
 // Post.jsx
-import { useQuery } from "@tanstack/react-query";
+import {  useQuery } from "@tanstack/react-query";
 import { useNavigate, useParams } from "react-router-dom";
-import { fetchPost } from "../util";
+import {  fetchPost } from "../util";
 
 function Post() {
   const navigate = useNavigate();
@@ -19,6 +19,9 @@ function Post() {
 
   if (isLoading) return "Loading...";
   if (isError) return `Error : ${error.message}`;
+
+
+
 
   return (
     <div>

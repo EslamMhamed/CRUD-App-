@@ -1,10 +1,10 @@
 import { useState } from "react"
 
-function PostForm({onSubmit}) {
+function PostForm({onSubmit, intialValue}) {
 
     const [post, setPost] = useState({
-        title: "",
-        body: ""
+        title: intialValue.title || "",
+        body: intialValue.body ||  ""
     })
 
     function handleChangeInput(e){
@@ -18,7 +18,7 @@ function PostForm({onSubmit}) {
     const renderFiled = (label)=>(
         <div>
             <label htmlFor={label} >{label}</label>
-            <input id={label} type="text" name={label.toLowerCase()} value={post[label.toLowerCase()]} onChange={handleChangeInput} />
+            <input id={label} type="text" name={label.toLowerCase()} value={post[label.toLowerCase()] } onChange={handleChangeInput} />
         </div>
     )
 
