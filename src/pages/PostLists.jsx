@@ -1,7 +1,11 @@
+import AddPost from "../components/AddPost"
 
 function PostLists() {
   return (
-    <div>PostLists</div>
+    <div>
+      <AddPost />
+      list
+    </div>
   )
 }
 

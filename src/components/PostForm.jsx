@@ -6,8 +6,8 @@ function PostForm() {
         title: "",
         body: ""
     })
-    
-    function handleChange(e){
+
+    function handleChangeInput(e){
         const {name, value} = e.target
         setPost((prevPost) => ({
             ...prevPost,
@@ -18,7 +18,7 @@ function PostForm() {
     const renderFiled = (label)=>(
         <div>
             <label htmlFor={label} >{label}</label>
-            <input id={label} type="text" name={label.toLowerCase()} value={post[label.toLowerCase()]} onChange={handleChange} />
+            <input id={label} type="text" name={label.toLowerCase()} value={post[label.toLowerCase()]} onChange={handleChangeInput} />
         </div>
     )
 

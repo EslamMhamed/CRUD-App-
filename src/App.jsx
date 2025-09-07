@@ -14,7 +14,10 @@ function App() {
   ])
 
   return (
-    <RouterProvider router={router} />
+    <>
+      <h1>Awesome blog</h1>
+      <RouterProvider router={router} />
+    </>
   )
 }
 
